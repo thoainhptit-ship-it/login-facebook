@@ -5,47 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Facebook - Đăng nhập hoặc đăng ký</title>
     <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        background: #f0f2f5;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        background: #fff;
         color: #1c1e21;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
       }
 
-      /* ===== MAIN ===== */
+      /* ===== MAIN SECTION ===== */
       .main {
         display: flex;
         flex: 1;
         min-height: 600px;
         align-items: center;
-        justify-content: center;
-        max-width: 1100px;
-        margin: 0 auto;
-        width: 100%;
-        padding: 40px 20px;
       }
 
-      /* ===== LEFT ===== */
+      /* LEFT PANEL */
       .left {
         flex: 1.1;
-        background: transparent;
+        background: #fff;
         display: flex;
         flex-direction: column;
-        padding: 40px 0 40px 40px;
+        padding: 40px 0 40px 80px;
         position: relative;
         overflow: hidden;
         min-height: 600px;
         justify-content: center;
       }
 
-      .fb-logo { width: 52px; height: 52px; margin-bottom: 20px; }
+      .fb-logo {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 20px;
+      }
 
       .tagline {
-        font-size: clamp(28px, 3.5vw, 48px);
+        font-size: 48px;
         font-weight: 900;
         line-height: 1.12;
         max-width: 340px;
@@ -54,9 +59,12 @@
         position: relative;
         margin-bottom: 0;
       }
-      .tagline .blue { color: #1877f2; }
 
-      /* Illustration */
+      .tagline .blue {
+        color: #1877f2;
+      }
+
+      /* Floating cards illustration */
       .illustration {
         position: absolute;
         right: -20px;
@@ -65,213 +73,359 @@
         height: 480px;
       }
 
+      /* Card 1 - top right (blue header) */
       .card-1 {
-        position: absolute; top: 20px; right: 40px;
-        width: 200px; height: 260px;
-        background: #1877f2; border-radius: 18px; overflow: hidden;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        width: 200px;
+        height: 260px;
+        background: #1877f2;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
         transform: rotate(3deg);
       }
+
       .card-1-inner {
-        margin: 40px 8px 8px; border-radius: 12px; height: 210px;
-        overflow: hidden; display: flex; align-items: center; justify-content: center;
+        background: #fff;
+        margin: 40px 8px 8px;
+        border-radius: 12px;
+        height: 210px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: linear-gradient(135deg, #f0f2f5 0%, #e4e6eb 100%);
       }
 
+      .card-1-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background: linear-gradient(120deg, #74b9ff, #0984e3);
+      }
+
+      /* Skate card */
       .card-2 {
-        position: absolute; top: 0; right: 160px;
-        width: 160px; height: 230px;
-        background: #74b9ff; border-radius: 18px; overflow: hidden;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        position: absolute;
+        top: 0px;
+        right: 160px;
+        width: 160px;
+        height: 230px;
+        background: #74b9ff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
         transform: rotate(-4deg);
       }
+
       .card-2-header {
-        background: #74b9ff; padding: 8px;
-        display: flex; align-items: center; gap: 6px;
-      }
-      .timer-badge {
-        background: #6c5ce7; color: #fff; font-size: 11px; font-weight: 700;
-        padding: 2px 7px; border-radius: 20px; margin-left: auto;
-      }
-      .card-2-photo {
-        width: 100%; height: 190px;
-        background: linear-gradient(160deg, #74b9ff 0%, #0984e3 100%);
-        display: flex; align-items: center; justify-content: center;
+        background: #74b9ff;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
       }
 
+      .timer-badge {
+        background: #6c5ce7;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 2px 7px;
+        border-radius: 20px;
+        margin-left: auto;
+      }
+
+      .card-2-photo {
+        width: 100%;
+        height: 190px;
+        background: linear-gradient(160deg, #74b9ff 0%, #0984e3 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Card 3 - story card */
       .card-3 {
-        position: absolute; bottom: 40px; right: 80px;
-        width: 190px; background: #fff; border-radius: 16px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.12); padding: 10px;
+        position: absolute;
+        bottom: 40px;
+        right: 80px;
+        width: 190px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+        padding: 10px;
         transform: rotate(1deg);
       }
+
       .card-3-photo {
-        width: 100%; height: 120px;
+        width: 100%;
+        height: 120px;
         background: linear-gradient(135deg, #fd79a8, #e84393);
-        border-radius: 10px; margin-bottom: 8px;
+        border-radius: 10px;
+        margin-bottom: 8px;
       }
-      .card-3-lines { display: flex; flex-direction: column; gap: 6px; }
-      .card-3-line { height: 10px; background: #e4e6eb; border-radius: 6px; }
-      .card-3-line.short { width: 60%; }
 
+      .card-3-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .card-3-line {
+        height: 10px;
+        background: #e4e6eb;
+        border-radius: 6px;
+      }
+
+      .card-3-line.short {
+        width: 60%;
+      }
+
+      /* Avatar */
       .avatar-badge {
-        position: absolute; bottom: 10px; right: 270px;
-        width: 72px; height: 72px; border-radius: 50%;
+        position: absolute;
+        bottom: 10px;
+        right: 270px;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
         background: linear-gradient(135deg, #fd79a8, #a29bfe);
-        border: 3px solid #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        border: 3px solid #fff;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
       }
 
+      /* Emoji */
       .emoji-laugh {
-        position: absolute; top: 60px; right: 320px;
+        position: absolute;
+        top: 60px;
+        right: 320px;
         font-size: 38px;
         animation: float 3s ease-in-out infinite;
       }
 
+      /* Heart reaction */
       .heart-react {
-        position: absolute; bottom: 80px; right: 30px;
-        background: #fff; border-radius: 50%;
-        width: 44px; height: 44px;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 22px; box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+        position: absolute;
+        bottom: 80px;
+        right: 30px;
+        background: #fff;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
       }
 
+      /* Messenger icon */
       .msg-icon {
-        position: absolute; top: 200px; right: 240px;
+        position: absolute;
+        top: 200px;
+        right: 240px;
         background: linear-gradient(135deg, #0084ff, #0099ff);
-        border-radius: 12px; width: 36px; height: 36px;
-        display: flex; align-items: center; justify-content: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.15); font-size: 18px;
+        border-radius: 12px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        font-size: 18px;
       }
 
       @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
       }
 
-      /* ===== RIGHT ===== */
+      /* RIGHT PANEL */
       .right {
         flex: 0 0 480px;
-        display: flex; flex-direction: column;
-        justify-content: center; align-items: center;
-        padding: 40px 50px; min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 50px;
+        min-height: 600px;
       }
 
       .login-box {
-        width: 100%; max-width: 380px;
-        background: #fff; border-radius: 8px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-        padding: 20px 20px 28px;
+        width: 100%;
+        max-width: 380px;
       }
 
-      .login-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; color: #1c1e21; }
+      .login-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #1c1e21;
+      }
 
       .input-field {
-        width: 100%; padding: 14px 16px; border: 1px solid #ccd0d5;
-        border-radius: 6px; font-size: 16px; color: #1c1e21; margin-bottom: 14px;
-        outline: none; transition: border-color 0.2s, box-shadow 0.2s; background: #fff;
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid #ccd0d5;
+        border-radius: 6px;
+        font-size: 16px;
+        color: #1c1e21;
+        margin-bottom: 14px;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+        background: #fff;
       }
-      .input-field::placeholder { color: #90949c; }
-      .input-field:focus { border-color: #1877f2; box-shadow: 0 0 0 2px rgba(24,119,242,0.2); }
+
+      .input-field::placeholder {
+        color: #90949c;
+      }
+
+      .input-field:focus {
+        border-color: #1877f2;
+        box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+      }
 
       .btn-login {
-        width: 100%; background: #1877f2; color: #fff; border: none;
-        border-radius: 6px; padding: 15px; font-size: 20px; font-weight: 700;
-        cursor: pointer; transition: background 0.15s; margin-bottom: 14px;
+        width: 100%;
+        background: #1877f2;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.15s;
+        margin-bottom: 14px;
       }
-      .btn-login:hover { background: #166fe5; }
+
+      .btn-login:hover {
+        background: #166fe5;
+      }
 
       .forgot-pw {
-        display: block; text-align: center; color: #1877f2; font-size: 14px;
-        text-decoration: none; font-weight: 500; margin-bottom: 28px;
+        display: block;
+        text-align: center;
+        color: #1877f2;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-bottom: 28px;
       }
-      .forgot-pw:hover { text-decoration: underline; }
 
-      .divider { width: 100%; height: 1px; background: #dadde1; margin-bottom: 24px; }
+      .forgot-pw:hover {
+        text-decoration: underline;
+      }
+
+      .divider {
+        width: 100%;
+        height: 1px;
+        background: #dadde1;
+        margin-bottom: 24px;
+      }
 
       .btn-create {
-        display: block; width: fit-content; margin: 0 auto;
-        background: #42b72a; color: #fff; border: none;
-        border-radius: 6px; padding: 12px 20px;
-        font-size: 17px; font-weight: 600; cursor: pointer;
-        text-align: center; transition: background 0.12s;
-        text-decoration: none; margin-bottom: 28px;
+        display: block;
+        width: 100%;
+        background: #fff;
+        color: #1877f2;
+        border: 1.5px solid #1877f2;
+        border-radius: 6px;
+        padding: 14px;
+        font-size: 17px;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        transition: background 0.12s;
+        text-decoration: none;
+        margin-bottom: 28px;
       }
-      .btn-create:hover { background: #36a420; }
+
+      .btn-create:hover {
+        background: #e7f0fd;
+      }
 
       .meta-logo {
-        display: flex; align-items: center; justify-content: center;
-        gap: 6px; color: #90949c; font-size: 13px; margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        color: #90949c;
+        font-size: 13px;
       }
 
       /* ===== FOOTER ===== */
-      footer { background: #fff; border-top: 1px solid #dadde1; padding: 20px 60px 30px; }
+      footer {
+        background: #fff;
+        border-top: 1px solid #dadde1;
+        padding: 20px 60px 30px;
+      }
 
-      .footer-langs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; align-items: center; }
-      .footer-langs a { color: #606770; font-size: 13px; text-decoration: none; }
-      .footer-langs a:hover { text-decoration: underline; }
+      .footer-langs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 14px;
+        align-items: center;
+      }
+
+      .footer-langs a {
+        color: #606770;
+        font-size: 13px;
+        text-decoration: none;
+      }
+
+      .footer-langs a:hover {
+        text-decoration: underline;
+      }
+
       .footer-langs .more-btn {
-        border: 1px solid #ccd0d5; border-radius: 4px; padding: 1px 6px;
-        font-size: 12px; cursor: pointer; color: #606770; background: #fff;
+        border: 1px solid #ccd0d5;
+        border-radius: 4px;
+        padding: 1px 6px;
+        font-size: 12px;
+        cursor: pointer;
+        color: #606770;
+        background: #fff;
       }
 
-      .footer-divider { height: 1px; background: #dadde1; margin-bottom: 12px; }
-
-      .footer-links { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-bottom: 10px; }
-      .footer-links a { color: #606770; font-size: 12px; text-decoration: none; }
-      .footer-links a:hover { text-decoration: underline; }
-
-      .footer-copy { color: #90949c; font-size: 12px; margin-top: 10px; }
-
-      /* ===== TABLET (≤ 960px) ===== */
-      @media (max-width: 960px) {
-        .main {
-          flex-direction: column;
-          align-items: center;
-          min-height: unset;
-          padding: 32px 20px;
-          gap: 24px;
-        }
-        .left {
-          padding: 20px;
-          align-items: center;
-          text-align: center;
-          min-height: unset;
-          overflow: visible;
-          width: 100%;
-        }
-        .tagline { font-size: clamp(24px, 5vw, 36px); max-width: 100%; }
-        .illustration {
-          position: relative; right: auto; top: auto;
-          width: 100%; max-width: 340px; height: 260px; margin-top: 20px;
-        }
-        .card-1 { width: 140px; height: 185px; top: 10px; right: 10px; }
-        .card-1-inner { margin: 30px 6px 6px; height: 140px; }
-        .card-2 { width: 120px; height: 170px; top: 0; right: 125px; }
-        .card-2-photo { height: 135px; }
-        .card-3 { width: 150px; bottom: 0; right: 60px; }
-        .card-3-photo { height: 85px; }
-        .avatar-badge { width: 54px; height: 54px; right: 200px; bottom: 5px; }
-        .emoji-laugh { top: 20px; right: 250px; font-size: 28px; }
-        .heart-react { bottom: 40px; right: 10px; width: 36px; height: 36px; font-size: 18px; }
-        .msg-icon { top: 130px; right: 190px; width: 30px; height: 30px; }
-        .right { flex: none; width: 100%; max-width: 420px; padding: 0; min-height: unset; }
-        footer { padding: 20px 30px 28px; }
+      .footer-divider {
+        height: 1px;
+        background: #dadde1;
+        margin-bottom: 12px;
       }
 
-      /* ===== MOBILE (≤ 480px) ===== */
-      @media (max-width: 480px) {
-        .main { padding: 20px 16px; gap: 16px; }
-        .left { padding: 16px; }
-        .fb-logo { width: 40px; height: 40px; }
-        .tagline { font-size: 22px; }
-        .illustration { display: none; }
-        .right { padding: 0; }
-        .login-box { padding: 16px 16px 20px; }
-        .login-title { font-size: 18px; }
-        .btn-login { font-size: 17px; padding: 14px; }
-        .btn-create { font-size: 15px; padding: 11px 18px; }
-        /* Ẩn footer trên mobile */
-        footer { display: none; }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: #606770;
+        font-size: 12px;
+        text-decoration: none;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-copy {
+        color: #90949c;
+        font-size: 12px;
+        margin-top: 10px;
       }
     </style>
   </head>
@@ -280,78 +434,222 @@
     <div class="main">
       <!-- LEFT -->
       <div class="left">
-        <svg class="fb-logo" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+        <!-- FB Logo -->
+        <svg
+          class="fb-logo"
+          viewBox="0 0 52 52"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <circle cx="26" cy="26" r="26" fill="#1877f2" />
-          <path d="M33.5 16h-3.2c-1.2 0-1.5.6-1.5 1.5V20h4.7l-.6 4.8H28.8V38h-5V24.8h-3.3V20h3.3v-3c0-3.3 2-5 4.9-5 1.4 0 2.8.1 4.8.4V16z" fill="#fff" />
+          <path
+            d="M33.5 16h-3.2c-1.2 0-1.5.6-1.5 1.5V20h4.7l-.6 4.8H28.8V38h-5V24.8h-3.3V20h3.3v-3c0-3.3 2-5 4.9-5 1.4 0 2.8.1 4.8.4V16z"
+            fill="#fff"
+          />
         </svg>
 
         <div class="tagline">
-          Khám<br />phá<br />những<br />điều <span class="blue">bạn</span><br /><span class="blue">yêu thích.</span>
+          Khám<br />phá<br />những<br />điều <span class="blue">bạn</span
+          ><br /><span class="blue">yêu thích.</span>
         </div>
 
         <!-- Illustration -->
         <div class="illustration">
+          <!-- Emoji -->
           <div class="emoji-laugh">😄</div>
 
-          <!-- Card 2 -->
+          <!-- Card 2 (skate - blue top card) -->
           <div class="card-2">
             <div class="card-2-header">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff">
                 <rect width="24" height="24" rx="6" fill="#0084ff" />
-                <path d="M12 5C7.58 5 4 8.13 4 12c0 2.1.94 3.99 2.47 5.35V20l2.26-1.24C9.7 19.57 10.83 19.75 12 19.75c4.42 0 8-3.13 8-7s-3.58-7-8-7z" fill="#fff" />
+                <path
+                  d="M12 5C7.58 5 4 8.13 4 12c0 2.1.94 3.99 2.47 5.35V20l2.26-1.24C9.7 19.57 10.83 19.75 12 19.75c4.42 0 8-3.13 8-7s-3.58-7-8-7z"
+                  fill="#fff"
+                />
               </svg>
               <span class="timer-badge">⏰ 16:45</span>
             </div>
             <div class="card-2-photo">
-              <svg width="100" height="160" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+              <!-- Skater silhouette -->
+              <svg
+                width="100"
+                height="160"
+                viewBox="0 0 100 160"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <circle cx="50" cy="22" r="14" fill="rgba(255,255,255,0.4)" />
-                <rect x="36" y="38" width="28" height="45" rx="6" fill="rgba(255,255,255,0.3)" />
-                <line x1="50" y1="83" x2="38" y2="115" stroke="rgba(255,255,255,0.4)" stroke-width="8" stroke-linecap="round" />
-                <line x1="50" y1="83" x2="62" y2="115" stroke="rgba(255,255,255,0.4)" stroke-width="8" stroke-linecap="round" />
-                <line x1="36" y1="58" x2="18" y2="75" stroke="rgba(255,255,255,0.4)" stroke-width="7" stroke-linecap="round" />
-                <line x1="64" y1="58" x2="82" y2="48" stroke="rgba(255,255,255,0.4)" stroke-width="7" stroke-linecap="round" />
-                <ellipse cx="50" cy="130" rx="28" ry="8" fill="rgba(255,255,255,0.25)" />
+                <rect
+                  x="36"
+                  y="38"
+                  width="28"
+                  height="45"
+                  rx="6"
+                  fill="rgba(255,255,255,0.3)"
+                />
+                <line
+                  x1="50"
+                  y1="83"
+                  x2="38"
+                  y2="115"
+                  stroke="rgba(255,255,255,0.4)"
+                  stroke-width="8"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="50"
+                  y1="83"
+                  x2="62"
+                  y2="115"
+                  stroke="rgba(255,255,255,0.4)"
+                  stroke-width="8"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="36"
+                  y1="58"
+                  x2="18"
+                  y2="75"
+                  stroke="rgba(255,255,255,0.4)"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="64"
+                  y1="58"
+                  x2="82"
+                  y2="48"
+                  stroke="rgba(255,255,255,0.4)"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                />
+                <ellipse
+                  cx="50"
+                  cy="130"
+                  rx="28"
+                  ry="8"
+                  fill="rgba(255,255,255,0.25)"
+                  rx="8"
+                />
               </svg>
             </div>
           </div>
 
-          <!-- Card 1 -->
+          <!-- Card 1 (blue phone card) -->
           <div class="card-1">
-            <div style="background:#1877f2;height:40px;display:flex;align-items:center;padding:0 10px;gap:6px;">
-              <div style="width:8px;height:8px;background:rgba(255,255,255,0.6);border-radius:50%;"></div>
-              <div style="width:8px;height:8px;background:rgba(255,255,255,0.6);border-radius:50%;"></div>
+            <div
+              style="
+                background: #1877f2;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                gap: 6px;
+              "
+            >
+              <div
+                style="
+                  width: 8px;
+                  height: 8px;
+                  background: rgba(255, 255, 255, 0.6);
+                  border-radius: 50%;
+                "
+              ></div>
+              <div
+                style="
+                  width: 8px;
+                  height: 8px;
+                  background: rgba(255, 255, 255, 0.6);
+                  border-radius: 50%;
+                "
+              ></div>
             </div>
             <div class="card-1-inner">
-              <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <!-- Yarn ball illustration -->
+              <svg
+                width="120"
+                height="120"
+                viewBox="0 0 120 120"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <circle cx="60" cy="60" r="50" fill="#74b9ff" opacity="0.4" />
                 <circle cx="60" cy="60" r="38" fill="#0984e3" opacity="0.5" />
-                <path d="M30 60 Q60 30 90 60 Q60 90 30 60Z" fill="rgba(255,255,255,0.3)" />
-                <path d="M40 40 Q70 55 80 80" stroke="rgba(255,255,255,0.5)" stroke-width="4" fill="none" stroke-linecap="round" />
-                <path d="M25 65 Q55 50 85 65" stroke="rgba(255,255,255,0.5)" stroke-width="4" fill="none" stroke-linecap="round" />
+                <path
+                  d="M30 60 Q60 30 90 60 Q60 90 30 60Z"
+                  fill="rgba(255,255,255,0.3)"
+                />
+                <path
+                  d="M40 40 Q70 55 80 80"
+                  stroke="rgba(255,255,255,0.5)"
+                  stroke-width="4"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M25 65 Q55 50 85 65"
+                  stroke="rgba(255,255,255,0.5)"
+                  stroke-width="4"
+                  fill="none"
+                  stroke-linecap="round"
+                />
               </svg>
             </div>
           </div>
 
-          <!-- Card 3 -->
+          <!-- Story card -->
           <div class="card-3">
             <div class="card-3-photo"></div>
             <div class="card-3-lines">
               <div class="card-3-line"></div>
               <div class="card-3-line short"></div>
             </div>
-            <div style="display:flex;gap:5px;justify-content:center;margin-top:8px;">
-              <div style="width:8px;height:8px;background:#1877f2;border-radius:50%;"></div>
-              <div style="width:8px;height:8px;background:#dadde1;border-radius:50%;"></div>
-              <div style="width:8px;height:8px;background:#dadde1;border-radius:50%;"></div>
+            <!-- Pagination dots -->
+            <div
+              style="
+                display: flex;
+                gap: 5px;
+                justify-content: center;
+                margin-top: 8px;
+              "
+            >
+              <div
+                style="
+                  width: 8px;
+                  height: 8px;
+                  background: #1877f2;
+                  border-radius: 50%;
+                "
+              ></div>
+              <div
+                style="
+                  width: 8px;
+                  height: 8px;
+                  background: #dadde1;
+                  border-radius: 50%;
+                "
+              ></div>
+              <div
+                style="
+                  width: 8px;
+                  height: 8px;
+                  background: #dadde1;
+                  border-radius: 50%;
+                "
+              ></div>
             </div>
           </div>
 
+          <!-- Avatar -->
           <div class="avatar-badge"></div>
+
+          <!-- Heart reaction -->
           <div class="heart-react">❤️</div>
 
+          <!-- Messenger icon -->
           <div class="msg-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
-              <path d="M12 2C6.48 2 2 6.13 2 11.2c0 2.7 1.22 5.12 3.18 6.86V22l2.9-1.6c.78.21 1.6.33 2.92.33 5.52 0 10-4.13 10-9.2S17.52 2 12 2zm1.04 12.4l-2.54-2.71-4.96 2.71 5.46-5.79 2.6 2.71 4.9-2.71-5.46 5.79z" />
+              <path
+                d="M12 2C6.48 2 2 6.13 2 11.2c0 2.7 1.22 5.12 3.18 6.86V22l2.9-1.6c.78.21 1.6.33 2.92.33 5.52 0 10-4.13 10-9.2S17.52 2 12 2zm1.04 12.4l-2.54-2.71-4.96 2.71 5.46-5.79 2.6 2.71 4.9-2.71-5.46 5.79z"
+              />
             </svg>
           </div>
         </div>
@@ -361,18 +659,58 @@
       <div class="right">
         <div class="login-box">
           <div class="login-title">Đăng nhập vào Facebook</div>
+
           <form id="login-form">
-            <input id="email" class="input-field" type="text" placeholder="Email hoặc số di động" />
-            <input id="password" class="input-field" type="password" placeholder="Mật khẩu" />
-            <button type="submit" class="btn-login" id="btn-login">Đăng nhập</button>
+            <input
+              id="email"
+              class="input-field"
+              type="text"
+              placeholder="Email hoặc số di động"
+            />
+            <input
+              id="password"
+              class="input-field"
+              type="password"
+              placeholder="Mật khẩu"
+            />
+
+            <button type="submit" class="btn-login" id="btn-login">
+              Đăng nhập
+            </button>
           </form>
+
           <a href="#" class="forgot-pw">Quên mật khẩu?</a>
+
           <div class="divider"></div>
+
           <a href="#" class="btn-create">Tạo tài khoản mới</a>
+
+          <!-- Meta logo -->
           <div class="meta-logo">
-            <svg width="54" height="16" viewBox="0 0 54 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 12.5C2 12.5 2 4 5.5 4C7.5 4 9 7 9 7C9 7 10.5 4 12.5 4C16 4 16 12.5 16 12.5" stroke="#90949c" stroke-width="1.5" stroke-linecap="round" fill="none" />
-              <text x="19" y="13" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="12" font-weight="600" fill="#90949c">Meta</text>
+            <svg
+              width="54"
+              height="16"
+              viewBox="0 0 54 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 12.5C2 12.5 2 4 5.5 4C7.5 4 9 7 9 7C9 7 10.5 4 12.5 4C16 4 16 12.5 16 12.5"
+                stroke="#90949c"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                fill="none"
+              />
+              <text
+                x="19"
+                y="13"
+                font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+                font-size="12"
+                font-weight="600"
+                fill="#90949c"
+              >
+                Meta
+              </text>
             </svg>
           </div>
         </div>
@@ -391,7 +729,9 @@
         <a href="#">ภาษาไทย</a>
         <a href="#">Ngôn ngữ khác...</a>
       </div>
+
       <div class="footer-divider"></div>
+
       <div class="footer-links">
         <a href="#">Đăng ký</a>
         <a href="#">Đăng nhập</a>
@@ -406,6 +746,7 @@
         <a href="#">Instagram</a>
         <a href="#">Threads</a>
       </div>
+
       <div class="footer-links">
         <a href="#">Chính sách quyền riêng tư</a>
         <a href="#">Trung tâm quyền riêng tư</a>
@@ -417,15 +758,17 @@
         <a href="#">Cookie</a>
         <a href="#">Lựa chọn quảng cáo</a>
       </div>
+
       <div class="footer-links">
         <a href="#">Điều khoản</a>
         <a href="#">Trợ giúp</a>
-        <a href="#">Tải thông tin liên hệ lên &amp; đối tượng không phải người dùng</a>
+        <a href="#"
+          >Tải thông tin liên hệ lên &amp; đối tượng không phải người dùng</a
+        >
       </div>
+
       <div class="footer-copy">Meta © 2026</div>
     </footer>
-  </body>
-</html>
 
     <script>
       document
