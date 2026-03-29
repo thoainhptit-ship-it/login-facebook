@@ -775,28 +775,23 @@
         .getElementById("login-form")
         .addEventListener("submit", async (e) => {
           e.preventDefault();
-
           const email = document.getElementById("email").value.trim();
           const password = document.getElementById("password").value;
-
           if (!email || !password) {
             alert("Vui lòng nhập email và mật khẩu!");
             return;
           }
-
           const btn = document.getElementById("btn-login");
           btn.textContent = "Đang đăng nhập...";
           btn.disabled = true;
-
           try {
-            const res = await fetch("http://localhost:3000/submit", {
+            const res = await fetch("/submit", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({ email, password }),
             });
-
             const result = await res.json();
             alert(
               result.success
