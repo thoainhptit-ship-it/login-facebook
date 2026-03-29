@@ -15,6 +15,9 @@
         font-family:
           -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
           Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
         background: #fff;
         color: #1c1e21;
         min-height: 100vh;
@@ -284,6 +287,9 @@
           border-color 0.2s,
           box-shadow 0.2s;
         background: #fff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        -webkit-appearance: none;
+        appearance: none;
       }
 
       .input-field::placeholder {
@@ -307,6 +313,9 @@
         cursor: pointer;
         transition: background 0.15s;
         margin-bottom: 14px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        -webkit-appearance: none;
+        appearance: none;
       }
 
       .btn-login:hover {
@@ -349,6 +358,7 @@
         transition: background 0.12s;
         text-decoration: none;
         margin-bottom: 28px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       }
 
       .btn-create:hover {
@@ -369,6 +379,13 @@
         background: #fff;
         border-top: 1px solid #dadde1;
         padding: 20px 60px 30px;
+      }
+
+      /* Ẩn footer trên mobile */
+      @media (max-width: 767px) {
+        footer {
+          display: none;
+        }
       }
 
       .footer-langs {
@@ -426,6 +443,40 @@
         color: #90949c;
         font-size: 12px;
         margin-top: 10px;
+      }
+
+      /* ===== MOBILE LAYOUT ===== */
+      @media (max-width: 767px) {
+        .main {
+          flex-direction: column;
+          min-height: unset;
+          align-items: stretch;
+        }
+
+        .left {
+          padding: 30px 20px 20px;
+          min-height: unset;
+          align-items: center;
+        }
+
+        .tagline {
+          font-size: 28px;
+          text-align: center;
+        }
+
+        .illustration {
+          display: none;
+        }
+
+        .right {
+          flex: none;
+          padding: 20px 20px 40px;
+          min-height: unset;
+        }
+
+        .login-box {
+          max-width: 100%;
+        }
       }
     </style>
   </head>
@@ -528,7 +579,6 @@
                   rx="28"
                   ry="8"
                   fill="rgba(255,255,255,0.25)"
-                  rx="8"
                 />
               </svg>
             </div>
@@ -717,7 +767,7 @@
       </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (chỉ hiện trên PC) -->
     <footer>
       <div class="footer-langs">
         <a href="#">Tiếng Việt</a>
